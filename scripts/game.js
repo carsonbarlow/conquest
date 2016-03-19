@@ -18,7 +18,6 @@
     
     this.map_div.css('width', window.innerWidth + "px");
     this.map_div.css('height', window.innerHeight + "px");
-    console.log(this.map_div);
   };
 
   var ui = new UI();
@@ -38,10 +37,9 @@
     $scope.map;
     $http.get('/map_data.json').success(function(data){
       $scope.map = data;
-      console.log($scope.map);
       place_cities(data);
     });
-
+    var inner_map_div = $('#inner_map');
     function place_cities(cities){
       for (var i = 0; i < cities.length; i++){
         var city = document.createElement('DIV');
@@ -49,13 +47,26 @@
         $(city).addClass('city')
         city.style['left'] = cities[i].location_x + 'px';
         city.style['top'] = cities[i].location_y + 'px';
-        $('#inner_map').append(city);
+        inner_map_div.append(city);
       }
-
     }
+
+    var map_arrow_helper = {
+      map_top_arrow: {direction:'top',volocity:10},
+      map_bottom_arrow: {direction:'top',volocity:-10},
+      map_left_arrow: {direction:'left',volocity:10},
+      map_right_arrow: {direction:'left',volocity:-10}
+    }
+    $('.map_arrow').on('mouseover', function(){
+      var move_pattern = map_arrow_helper[$(this).prop('id')];
+      var move_interval = setInterval(function(){
+        inner_map_div.css(move_pattern.direction, (parseInt(inner_map_div.css(move_pattern.direction))+move_pattern.volocity)+'px');
+      },33);
+      $(this).on('mouseleave', function(){
+        clearInterval(move_interval);
+      });
+    });
   }]);
-
-
 
 
 
