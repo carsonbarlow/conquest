@@ -1,0 +1,58 @@
+{
+  "resources":{
+    "food": 2019.3,
+    "wood": 1498.7,
+    "stone": 1742.1,
+    "gold":997.6,
+    "science":294.4,
+    "mysticism":198.9,
+    "favor":83.2
+  },
+  "units":{
+     "workers":21,
+     "troops":17,
+     "specialists":15
+  },
+  "heros":[
+    {
+      "id":1,
+      "name":"Cohr",
+      "level":5,
+      "exp":190,
+      "endurance":8,
+      "damage":15,
+      "intelligence":7,
+      "resource_gathering":2,
+      "construction":0,
+      "assault":6,
+      "defense":8,
+      "research":0,
+      "sabotage":0
+    },
+    {
+      "id":2,
+      "name":"Sabin",
+      "level":4,
+      "exp":120,
+      "endurance":12,
+      "damage":6,
+      "intelligence":8,
+      "resource_gathering":8,
+      "construction":2,
+      "assault":0,
+      "defense":3,
+      "research":0,
+      "sabotage":0
+    }
+  ],
+  "territories":[
+    {
+      "5":{
+        "laborer":6,
+        "troop":5,
+        "specialist": 3,
+        "heros":[2]
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html ng-app="game">
+  <head>
+    <title>Conquest of Madryn</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="game.css">
+  </head>
+  <body height="auto" width="100%">
+
+      <div id="map" ng-controller="MapController as mapCtrl">
+        <div id="inner_map">
+          <img src="images/map_bg.jpg" width="3200px" height="auto">
+        </div>
+        <i id="map_top_arrow" class="map_arrow glyphicon glyphicon-circle-arrow-up"></i>
+        <i id="map_bottom_arrow" class="map_arrow glyphicon glyphicon-circle-arrow-down"></i>
+        <i id="map_left_arrow" class="map_arrow glyphicon glyphicon-circle-arrow-left"></i>
+        <i id="map_right_arrow" class="map_arrow glyphicon glyphicon-circle-arrow-right"></i>
+      </div>
+
+
+        <div ng-controller="ResourceController as resourceCtrl" id="resource_side_bar" class="col-sm-2 col-sm-offset-10" style="background-color:lightgreen;">
+          <ul class="list-group" style="margin-top:25px;">
+            <li class="list-group-item">
+              <span class="badge">{{player.resources.food | number}}</span>
+              <img ng-src="{{image_urls.food_icon}}" class="icon">
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{player.resources.wood | number}}</span>
+              <img ng-src="{{image_urls.wood_icon}}" class="icon">
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{player.resources.stone | number}}</span>
+              <img ng-src="{{image_urls.stone_icon}}" class="icon">
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{player.resources.gold | number}}</span>
+              <img ng-src="{{image_urls.gold_icon}}" class="icon">
+            </li>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="badge">{{player.resources.science | number}}</span>
+              <img ng-src="{{image_urls.science_icon}}" class="icon">
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{player.resources.mysticism | number}}</span>
+              <img ng-src="{{image_urls.mysticism_icon}}" class="icon">
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{player.resources.favor | number}}</span>
+              <img ng-src="{{image_urls.favor_icon}}" class="icon">
+            </li>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="badge">{{player.units.troops | number}}/{{player.units.troops | number}}</span>
+              <img ng-src="{{image_urls.troop_icon}}" class="icon">
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{player.units.workers | number}}/{{player.units.workers | number}}</span>
+              <img ng-src="{{image_urls.worker_icon}}" class="icon">
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{player.units.specialists | number}}/{{player.units.specialists | number}}</span>
+              <img ng-src="{{image_urls.specialist_icon}}" class="icon">
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-12" style="background-color:darkgrey;height:155px;padding-top:15px;position:fixed;bottom:0;">
+          <div class-"container">
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-lg btn-info" style="width:100%;">Units</button>
+              <button type="button" class="btn btn-lg btn-info" style="width:100%;margin-top:15px;">Heroes</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-lg btn-info" style="width:100%;">Research</button>
+              <button type="button" class="btn btn-lg btn-info" style="width:100%;margin-top:15px;">Crafter's Guild</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-lg btn-info" style="width:100%;">Capital Development</button>
+              <button type="button" class="btn btn-lg btn-info" style="width:100%;margin-top:15px;">Quests</button>
+            </div>
+            <div class="col-sm-2">
+              <button type="button" class=" btn btn-lg btn-default" style="height:110px;width=100%;" id="carson">Elements</button>
+            </div>
+          </div>
+          <button type="button" class=" btn btn-lg btn-success" id="carson2" style="position:absolute;bottom:15px;right:15px;">End Turn</button>
+        </div>
+
+    
+
+    <!-- <div id="details"></div> -->
+    <!-- <div id="map" ng-controller="MapController as mapCtrl" ng-mousedown="grab_map()" ng-mouseup="ungrab_map()" ng-class="map_grabbed"></div> -->
+    <script type="text/javascript" src="scripts/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/game.js"></script>
+  </body>
+</html>

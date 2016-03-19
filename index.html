@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="authentication">
+  <head>
+    <title>Conquest of Madryn</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div ng-controller="authenticateController as authCtrl" id="login_container">
+      <input ng-model="user_name" id="login_user_name" placeholder="User Name"></input>
+      <input ng-model="password" id="login_password" placeholder="Password" type="password"></input>
+      <button ng-click="attempt_login()" id="login_submit">Login</button>
+      <button ng-click="new_user()" id="new_user">New User</button>
+    </div>
+    <script type="text/javascript" src="scripts/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
