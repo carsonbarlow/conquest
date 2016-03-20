@@ -1,0 +1,50 @@
+<div class="block_overlay"></div>
+<div class="col-sm-6 col-sm-offset-3 province">
+  <div class="row" style="background-image:url('/images/provinces/1.jpg');height:200px;background-size:100% 100%">
+    <div class="province_name col-sm-6 col-sm-offset-3" style="text-align:center;background-color:antiquewhite;border-radius:4px;"><h3>{{getProvinceName()}}</h1></div>
+    <button type="button" class="close_btn btn btn-sm btn-danger col-sm-offset-2" style="margin-top:15px;" ng-click="closeProvince()">X</button>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-0">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="badge">{{getResourceIncrease('f_income')}}/pt (+{{0}})</span>
+          <img ng-src="{{image_urls.food_icon}}" class="icon">
+        </li>
+        <li class="list-group-item">
+          <span class="badge">{{getResourceIncrease('w_income')}}/pt (+{{0}})</span>
+          <img ng-src="{{image_urls.wood_icon}}" class="icon">
+        </li>
+        <li class="list-group-item">
+          <span class="badge">{{getResourceIncrease('s_income')}}/pt (+{{0}})</span>
+          <img ng-src="{{image_urls.stone_icon}}" class="icon">
+        </li>
+        <li class="list-group-item">
+          <span class="badge">{{getResourceIncrease('g_income')}}/pt (+{{0}})</span>
+          <img ng-src="{{image_urls.gold_icon}}" class="icon">
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-5 col-sm-offset-3">
+      <button type="button" class="btn btn-lg btn-success" style="width:100%;height:70px;">Construction</button>
+      <button type="button" class="btn btn-lg btn-warning" style="width:100%;height:70px">Local Defense</button>
+      <button type="button" class="btn btn-lg btn-danger" style="width:100%;height:70px">Attack Plans</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="progress col-sm-12">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+          60%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" class="province_buildings">
+    <resource-production data-resource-type="food_2" class="col-sm-4"></resource-production>
+    <resource-production data-resource-type="wood_1" class="col-sm-4"></resource-production>
+    <empty-plot class="col-sm-4"></empty-plot>
+  </div>
+  
+
+</div>
